@@ -6,7 +6,6 @@ Custom Typescript decorators for Angular applications
 
 You can just copy and paste selected decorator into your code. Pay attention on the imports and inner interfaces.
 
-
 ### Safe
 
 Safe can be used for wrapping up methods. Main idea is to wrap method with try/catch construction
@@ -24,6 +23,17 @@ You can pass an argument to decorator
   private getParams(clone: HttpRequest<any>) {}
 ```
 In case of error you can easily catch it and return whatever you need
+
+### Feature Flipper
+
+There are a lot of cases when you need to have specific feature be presented only by flag
+or through command. 
+ 
+```
+  @FeatureFlipper('use_histogram_shift', StorageType.Local, 'HistogramShift')
+  private shiftEnabled: boolean;
+```
+
 
 ## Built With
 
