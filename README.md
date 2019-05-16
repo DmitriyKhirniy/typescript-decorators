@@ -4,57 +4,26 @@ Custom Typescript decorators for Angular applications
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You can just copy and paste selected decorator into your code. Pay attention on the imports and inner interfaces.
 
-### Prerequisites
 
-What things you need to install the software and how to install them
+### Safe
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Safe can be used for wrapping up methods. Main idea is to wrap method with try/catch construction
+and create safe execution scope
 
 ```
-Give the example
+  @Safe()
+  private showAllSeries(excludeIndex?: number): void {}
 ```
 
-And repeat
+You can pass an argument to decorator
 
 ```
-until finished
+  @Safe({returnValue: {}})
+  private getParams(clone: HttpRequest<any>) {}
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+In case of error you can easily catch it and return whatever you need
 
 ## Built With
 
